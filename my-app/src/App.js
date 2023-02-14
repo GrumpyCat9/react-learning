@@ -1,9 +1,11 @@
 import './App.css';
+import Post from './Components/Post';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hellowa</h1>
+      <Post author = "Nishad" body = "welcome to Sri lanka"/>
+      <Post author = "Naveed" body = "welcome to Sri lanka"/>
     </div>
   );
 }
