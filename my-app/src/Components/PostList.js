@@ -7,34 +7,18 @@ import Modal from "./Modal";
 
 function Postlist(props) {
   
-  const [enteredBody, setEnteredBody] = useState(""); //by default empty
-  const [enteredAuthor, setEnteredAuthor] = useState("");
-
-  
-
-  function changeBodyHandler(event) {
-    setEnteredBody(event.target.value);
-  }
-
-  function changeAuthorHandler(event) {
-    setEnteredAuthor(event.target.value);
-  }
-
-
 
   return (
     <>
-      {props.isPosting ? (
-        <Modal onClose={props.onStopPosting}>
+      {props.isPosting ? 
+        <Modal onClose={props.hideModalHandler}>
           <NewPost
-            onBodyChange={changeBodyHandler}
-            onAuthorChange={changeAuthorHandler}
+            onCancel={props.onStopPosting}
           />
         </Modal>
-      ) : false}
+       : false}
 
       <ul className={classes.posts}>
-        <Post author={enteredAuthor} body={enteredBody} />
         <Post author="Naveed" body="welcome to Sri lanka" />
       </ul>
     </>
