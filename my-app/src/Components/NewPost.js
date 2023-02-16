@@ -21,6 +21,10 @@ function NewPost(props) {
       body: enteredBody,
       author : enteredAuthor
     }
+
+    console.log(postData)
+    props.onAddPost(postData)
+    props.onCancel()
   }
 
   return (
@@ -36,7 +40,7 @@ function NewPost(props) {
       </p>
       <p className={classes.actions}>
         <button type='button' onClick={props.onCancel}>Cancel</button>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </p>
     </form>
   );

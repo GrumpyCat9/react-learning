@@ -7,6 +7,11 @@ import Modal from "./Modal";
 
 function Postlist(props) {
   
+  const [posts, setPosts]= useState([])
+
+  function addPostHandler(postData){
+    setPosts((existingPosts) => [postData, ...existingPosts]);
+  }
 
   return (
     <>
@@ -14,6 +19,7 @@ function Postlist(props) {
         <Modal onClose={props.hideModalHandler}>
           <NewPost
             onCancel={props.onStopPosting}
+            onAddPost={addPostHandler}
           />
         </Modal>
        : false}
